@@ -23,4 +23,12 @@ steps:
     script: |
       python -m pip install --upgrade pip
        pip install -r requirements.txt
+  displayName: 'dependence install'
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: 'pytest tests/ --junitxml=pytest-results.xml'
+  displayName: 'Run Pytest'
+
+
 
