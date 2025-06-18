@@ -41,6 +41,6 @@ steps:
     script: |
       echo "Triggering Azure Function..."
       curl -X POST "${AZURE_FUNCTION_URL}"
-
+  displayName: 'Run Pytest'
 
 
