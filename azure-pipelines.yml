@@ -40,7 +40,9 @@ steps:
     targetType: 'inline'
     script: |
       echo "Triggering Azure Function..."
-      curl -X POST "${AZURE_FUNCTION_URL}"
+            RESPONSE=$(curl -s -X POST "${AZURE_FUNCTION_URL}")
+            echo "Azure Function Response:"
+            echo "$RESPONSE"
   displayName: 'AI Alanyser'
 
 
