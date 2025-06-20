@@ -2,9 +2,4 @@
 
 testing pr raise for develop branch test-01
 test-02
-new branch created in repo for testing prs
-pr new
-add responce in pipeline
-new pr 
-test based on follow
-test pr based on new pr 
+
