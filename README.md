@@ -6,4 +6,5 @@ new branch created in repo for testing prs
 pr new
 add responce in pipeline
 new pr 
-test based
+test based on follow
+test pr based on new pr 
