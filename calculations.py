@@ -25,4 +25,5 @@ def calculate_discounted_price(original_price, discount_percent):
         raise ValueError("Discount percent must be between 0 and 100.")
 
     discount_amount = (discount_percent / 100) * original_price
+    print("Calculated discount)
     return round(original_price - discount_amount, 2)
