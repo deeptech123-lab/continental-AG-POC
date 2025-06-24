@@ -4,7 +4,7 @@
 # https://aka.ms/yaml
 
 trigger:
-- develop
+- none
 
 pr:
   branches:
@@ -39,8 +39,10 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      echo "Triggering Azure Function..."
-      curl -X POST "${AZURE_FUNCTION_URL}"
-  displayName: 'Run Pytest'
+      echo "Triggering Azure Function via GET..."
+      RESPONSE=$(curl -s -w "\nHTTP Status: %{http_code}\n" -X GET "${AZURE_FUNCTION_URL}")
+      echo "Azure Function Response:"
+      echo "$RESPONSE"
+  displayName: 'AI Alanyser'
 
 

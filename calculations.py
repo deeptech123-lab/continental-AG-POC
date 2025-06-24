@@ -23,6 +23,7 @@ def calculate_discounted_price(original_price, discount_percent):
         raise ValueError("Original price cannot be negative.")
     if not (0 <= discount_percent <= 100):
         raise ValueError("Discount percent must be between 0 and 100.")
-
+    # Calculating discount
     discount_amount = (discount_percent / 100) * original_price
+    print("Calculated discount")
     return round(original_price - discount_amount, 2)
