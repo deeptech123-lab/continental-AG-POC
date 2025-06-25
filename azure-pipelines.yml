@@ -36,6 +36,20 @@ steps:
   displayName: 'Run Pytest'
 
 - task: Bash@3
+  displayName: 'Notify Teams: Tests Passed'
+  condition: succeeded()
+  inputs:
+    targetType: 'inline'
+    script: |
+      echo "Sending message to Microsoft Teams..."
+      curl -H "Content-Type: application/json" \
+        -d '{
+              "title": "Pytest Passed",
+              "text": "All tests passed successfully in the Azure DevOps pipeline for branch: $(Build.SourceBranchName)"
+            }' \
+        "$TEAMS_WEBHOOK_URL"
+
+- task: Bash@3
   inputs:
     targetType: 'inline'
     script: |
