@@ -45,7 +45,7 @@ steps:
       curl -H "Content-Type: application/json" \
         -d '{
               "title": "Pytest Passed",
-              "text": "All tests passed successfully in the Azure DevOps pipeline for branch: $(System.PullRequest.SourceBranch)"
+              "text": "All tests passed successfully in the Azure DevOps pipeline"
             }' \
         "$TEAMS_WEBHOOK_URL"
 
