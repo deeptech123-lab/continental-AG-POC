@@ -50,6 +50,19 @@ steps:
         "$TEAMS_WEBHOOK_URL"
 
 - task: Bash@3
+  displayName: 'Notify Teams: Tests Failed'
+  condition: failed()
+  inputs:
+    targetType: 'inline'
+    script: |
+      echo "Sending failure message to Microsoft Teams..."
+      curl -H "Content-Type: application/json" \
+        -d '{
+              "title": "Pytests Failed",
+              "text": "One or more tests failed in the Azure DevOps pipeline"
+            }' \
+        "$TEAMS_WEBHOOK_URL"
+- task: Bash@3
   inputs:
     targetType: 'inline'
     script: |
