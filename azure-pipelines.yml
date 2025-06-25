@@ -44,5 +44,6 @@ steps:
       echo "Azure Function Response:"
       echo "$RESPONSE"
   displayName: 'AI Alanyser'
+  condition: succeeded()
 
 
