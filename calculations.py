@@ -27,3 +27,13 @@ def calculate_discounted_price(original_price, discount_percent):
     discount_amount = (discount_percent / 100) * original_price
     print("Calculated discount")
     return round(original_price - discount_amount, 2)
+
+def apply_tax(price, tax_rate_percent):
+    return round(price + (price * tax_rate_percent / 100), 2)
+
+def get_final_price(original_price, discount_percent, tax_rate_percent):
+    price_after_discount = calculate_discounted_price(original_price, discount_percent)
+    # final_price = apply_tax(price_after_discount, tax_rate_percent)
+    # Applying tax not required.
+    final_price = price_after_discount
+    return final_price
